@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
-
+import {BrowserRouter, Routes,Route,useLocation,} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -16,7 +10,6 @@ function AppContent() {
 
   const location = useLocation();
 
-  // Hide public Navbar on Dashboard
   const isDashboard =
     location.pathname.startsWith("/dashboard");
 
@@ -27,28 +20,16 @@ function AppContent() {
       <Routes>
 
         {/* HOME */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/"element={<Home />}/>
 
         {/* LOGIN */}
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+        <Route path="/login"element={<Login />}/>
 
         {/* REGISTER */}
-        <Route
-          path="/register"
-          element={<Register />}
-        />
+        <Route path="/register"element={<Register />}/>
 
         {/* DASHBOARD */}
-        <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
+        <Route path="/dashboard" element={<Dashboard />}/>
 
       </Routes>
     </>

@@ -2744,7 +2744,7 @@ function Dashboard() {
                                     !createMenuOpen
                                 )
                             }
-                            className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 font-medium text-white hover:bg-blue-700"
+                            className="cursor-pointer flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 font-medium text-white hover:bg-blue-700"
                         >
 
                             <span className="text-xl">
@@ -2775,7 +2775,7 @@ function Dashboard() {
                                             true
                                         );
                                     }}
-                                    className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50"
+                                    className="cursor-pointer flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50"
                                 >
 
                                     <span>
@@ -2793,7 +2793,7 @@ function Dashboard() {
                                     type="button"
                                     onClick={openFilePicker}
                                     disabled={uploadFileMutation.isPending}
-                                    className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+                                    className="cursor-pointer flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50"
                                 >
                                     <span>📄</span>
                                     <span>Upload files</span>
@@ -2806,7 +2806,7 @@ function Dashboard() {
                                     type="button"
                                     onClick={openFolderPicker}
                                     disabled={uploadFileMutation.isPending}
-                                    className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+                                    className="cursor-pointer flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-50"
                                 >
                                     <span>📁</span>
                                     <span>Upload folder</span>
@@ -2830,7 +2830,7 @@ function Dashboard() {
                             onClick={
                                 goToRoot
                             }
-                            className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "home" &&
+                            className={`cursor-pointer flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "home" &&
                                 currentFolder === null
                                 ? "bg-blue-50 font-medium text-blue-700"
                                 : "text-gray-700 hover:bg-gray-100"
@@ -2853,7 +2853,7 @@ function Dashboard() {
                             onClick={
                                 openMyFiles
                             }
-                            className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "myfiles"
+                            className={`cursor-pointer flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "myfiles"
                                 ? "bg-blue-50 font-medium text-blue-700"
                                 : "text-gray-700 hover:bg-gray-100"
                                 }`}
@@ -2873,7 +2873,7 @@ function Dashboard() {
                         <button
                             type="button"
                             onClick={openShared}
-                            className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "shared"
+                            className={`cursor-pointer flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "shared"
                                 ? "bg-purple-50 font-medium text-purple-700"
                                 : "text-gray-700 hover:bg-gray-100"
                                 }`}
@@ -2894,7 +2894,7 @@ function Dashboard() {
                             onClick={
                                 openFavorites
                             }
-                            className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "favorites"
+                            className={`cursor-pointer flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "favorites"
                                 ? "bg-yellow-50 font-medium text-yellow-700"
                                 : "text-gray-700 hover:bg-gray-100"
                                 }`}
@@ -2914,7 +2914,7 @@ function Dashboard() {
                         <button
                             type="button"
                             onClick={openTrash}
-                            className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "trash"
+                            className={`cursor-pointer flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left ${activePage === "trash"
                                 ? "bg-green-50 font-medium text-green-700"
                                 : "text-gray-700 hover:bg-gray-100"
                                 }`}
@@ -2962,9 +2962,14 @@ function Dashboard() {
                         </button>
 
 
-                        <h1 className="text-xl font-semibold text-blue-600">
+                        <button
+                            type="button"
+                            onClick={goToRoot}
+                            className="cursor-pointer text-xl font-semibold text-blue-600 hover:text-blue-700 hover:underline transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                            title="Go to Home"
+                        >
                             Cloud Storage
-                        </h1>
+                        </button>
 
                     </div>
 
