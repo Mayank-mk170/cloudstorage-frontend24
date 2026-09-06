@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <header className="w-full border-b bg-white">
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-                
+
                 {/* LOGO */}
                 <Link
                     to="/"
@@ -20,13 +20,13 @@ function Navbar() {
 
                 {/* AUTH NAVIGATION */}
                 <div className="flex items-center gap-3">
-                    
+
                     {/* SIGN IN */}
                     <Link
                         to="/login"
                         className={
                             isLoginPage
-                                ? "rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transition hover:bg-blue-500"
+                                ? "rounded-xl bg-blue-700 px-6 py-3 font-semibold text-white transition hover:bg-blue-800"
                                 : "rounded-xl px-6 py-3 font-semibold text-slate-700 transition hover:bg-slate-100"
                         }
                     >
@@ -38,7 +38,7 @@ function Navbar() {
                         to="/register"
                         className={
                             isRegisterPage
-                                ? "rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transition hover:bg-blue-500"
+                                ? "rounded-xl bg-blue-700 px-6 py-3 font-semibold text-white transition hover:bg-blue-800"
                                 : "rounded-xl px-6 py-3 font-semibold text-slate-700 transition hover:bg-slate-100"
                         }
                     >
