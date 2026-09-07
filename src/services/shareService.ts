@@ -192,3 +192,31 @@ export const getFilesSharedWithMe =
 
         return response.data;
     };
+
+    // PUBLIC LINK
+// ==========================================
+
+export interface CreatePublicLinkRequest {
+    fileId: number;
+    expiresAt?: string | null;
+}
+
+export interface PublicLinkResponse {
+    id: number;
+    fileId: number;
+    token: string;
+    expiresAt?: string | null;
+    createdAt?: string;
+}
+export const createPublicLink = async (
+    data: CreatePublicLinkRequest
+): Promise<PublicLinkResponse> => {
+
+    const response =
+        await api.post<PublicLinkResponse>(
+            "/api/public-links",
+            data
+        );
+
+    return response.data;
+};

@@ -224,6 +224,32 @@ function Dashboard() {
         useState<number | null>(null);
 
     // ==========================================
+    // CLOSE FILE MENU WHEN CLICKING OUTSIDE
+    // ==========================================
+
+    useEffect(() => {
+        const handleFileMenuClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+
+            if (!target.closest("[data-file-menu]")) {
+                setOpenFileMenu(null);
+            }
+        };
+
+        document.addEventListener(
+            "mousedown",
+            handleFileMenuClickOutside
+        );
+
+        return () => {
+            document.removeEventListener(
+                "mousedown",
+                handleFileMenuClickOutside
+            );
+        };
+    }, []);
+
+    // ==========================================
     // RENAME STATE
     // ==========================================
 
@@ -4261,7 +4287,10 @@ function Dashboard() {
 
                                                         {/* ACTIONS */}
 
-                                                        <div className="relative flex items-center">
+                                                        <div
+                                                            data-file-menu
+                                                            className="relative flex items-center"
+                                                        >
 
                                                             <button
                                                                 type="button"
